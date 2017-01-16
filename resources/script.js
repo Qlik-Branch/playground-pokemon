@@ -456,7 +456,7 @@ var viz = function($element, layout,logoSize) {
 
     function transform(d) {    
       
-      return "translate(" + x(d[1].qNum) + "," + y(d[2].qNum) + ")";
+      return "translate(" + (x(d[1].qNum)-60) + "," + (y(d[2].qNum)-60) + ")";
 
     }
 }
