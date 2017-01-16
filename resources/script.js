@@ -185,10 +185,10 @@ function drawGraph(){
       ],
       qMeasures : [
         {
-        qDef : {qDef : "Avg(["+xVal+"])"}
+        qDef : {qDef : "Avg(["+xVal+"])", qLabel: xVal}
       },
       {
-        qDef : {qDef : "Avg(["+yVal+"])"}
+        qDef : {qDef : "Avg(["+yVal+"])", qLabel: yVal}
       }
     ],
     qSuppressZero : true,
@@ -276,17 +276,20 @@ function putInfo(data)
     // console.log(benchmarkPokemon+" "+benchmarkDeviationValue);
   });
 
-  infoDiv=$("#info-div");
-  infoDiv.empty();
-  infoDiv.append( "<p>Number of Pokemon in this category:"+currentCount+"/"+totalCount+"</p>");
-  infoDiv.append( "<p>Pokemon with higest "+$("#x-axis-menu").val()+" : "+maxXName+"("+maxXValue+")</p>");
-  infoDiv.append( "<p>Pokemon with higest "+$("#y-axis-menu").val()+" : "+maxYName+"("+maxYValue+")</p>");
-  infoDiv.append( "<p>Pokemon with lowest "+$("#x-axis-menu").val()+" : "+minXName+"("+minXValue+")</p>");
-  infoDiv.append( "<p>Pokemon with lowest "+$("#y-axis-menu").val()+" : "+minYName+"("+minYValue+")</p>");
-  infoDiv.append( "<p>Strongest pokemon in this category:"+maxXYName+"("+$("#x-axis-menu").val()+"+"+$("#y-axis-menu").val()+"="+maxXYValue+")</p>");
-  infoDiv.append( "<p>Weakest pokemon in this category:"+minXYName+"("+$("#x-axis-menu").val()+"+"+$("#y-axis-menu").val()+"="+minXYValue+")</p>");
-  infoDiv.append( "<p>Average "+$("#x-axis-menu").val()+":"+avgX.toFixed(2)+" , "+"Average "+$("#y-axis-menu").val()+":"+avgY.toFixed(2)+"</p>");
-  infoDiv.append( "<p>Benchmark pokemon is "+benchmarkPokemon+" , "+"(with deviation :"+benchmarkDeviationValue.toFixed(2)+")</p>");
+  infoDiv1=$("#info-div-1");
+  infoDiv1.empty();
+  infoDiv1.append( "<p>Number of Pokemon in this category:"+currentCount+"/"+totalCount+"</p>");
+  infoDiv1.append( "<p>Pokemon with higest "+$("#x-axis-menu").val()+" : "+maxXName+"("+maxXValue+")</p>");
+  infoDiv1.append( "<p>Pokemon with higest "+$("#y-axis-menu").val()+" : "+maxYName+"("+maxYValue+")</p>");
+  infoDiv1.append( "<p>Pokemon with lowest "+$("#x-axis-menu").val()+" : "+minXName+"("+minXValue+")</p>");
+  infoDiv1.append( "<p>Pokemon with lowest "+$("#y-axis-menu").val()+" : "+minYName+"("+minYValue+")</p>");
+
+  infoDiv2=$("#info-div-2");
+  infoDiv2.empty();
+  infoDiv2.append( "<p>Strongest pokemon in this category:"+maxXYName+"("+$("#x-axis-menu").val()+"+"+$("#y-axis-menu").val()+"="+maxXYValue+")</p>");
+  infoDiv2.append( "<p>Weakest pokemon in this category:"+minXYName+"("+$("#x-axis-menu").val()+"+"+$("#y-axis-menu").val()+"="+minXYValue+")</p>");
+  infoDiv2.append( "<p>Average "+$("#x-axis-menu").val()+":"+avgX.toFixed(2)+" , "+"Average "+$("#y-axis-menu").val()+":"+avgY.toFixed(2)+"</p>");
+  infoDiv2.append( "<p>Benchmark pokemon is "+benchmarkPokemon+" , "+"(with deviation :"+benchmarkDeviationValue.toFixed(2)+")</p>");
 }
 
 //Graph rendering
