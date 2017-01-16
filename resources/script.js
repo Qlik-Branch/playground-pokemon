@@ -13,7 +13,7 @@ var config = {
 
 function authenticate(){
   // Playground.authenticate(config);
-  window.location.pathname = "/liveshowcase/pokemonApp/main.html";
+  window.location.pathname = "/main.html";
   // return;
 };
 
@@ -48,7 +48,7 @@ function main() {
    * See full documention: http://help.qlik.com/en-US/sense-developer/Subsystems/APIs/Content/MashupAPI/qlik-interface-interface.htm
    */
 
-  require(['js/qlik',"/showcaseresources/playground-pokemon/resources/d3.v3.min.js","/showcaseresources/playground-pokemon/resources/senseUtils.js"], function(qlik) {
+  require(['js/qlik',"/resources/d3.v3.min.js","/resources/senseUtils.js"], function(qlik) {
     // We're now connected
 
     // Suppress Qlik error dialogs and handle errors how you like.
